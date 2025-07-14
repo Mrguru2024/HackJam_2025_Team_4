@@ -1,36 +1,13 @@
 import Link from "next/link";
 import FeatureCard from "@/components/FeatureCard";
 import StepCard from "@/components/StepCard";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
     <main className="w-full min-h-screen bg-surface-subtle dark:bg-surface-default flex flex-col items-center px-0 sm:px-0">
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center bg-gradient-to-br from-surface-subtle via-surface-default to-primary-lighter dark:from-surface-default dark:via-surface-subtle dark:to-primary-default rounded-b-xl pb-10 pt-16 md:pt-24 md:pb-16">
-        <div className="flex flex-col items-center w-full px-6 md:max-w-2xl">
-          <h1 className="font-jura text-[2.8rem] md:text-[3.5rem] font-extrabold text-title text-center mb-4 drop-shadow-xl tracking-tight">
-            LevelUp
-          </h1>
-          <p className="text-body text-xl md:text-2xl font-jura text-center max-w-xl mb-8">
-            Gamify your career journey. Track progress, earn badges, and connect
-            with Per Scholas alumni.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 w-full max-w-xs md:max-w-md justify-center">
-            <Link
-              href="/auth/signup"
-              className="bg-gradient-to-r from-primary-default to-primary-lighter text-text-negative font-bold py-3 px-10 rounded-[16px] shadow-lg text-center text-lg hover:scale-105 hover:from-primary-lighter hover:to-primary-default transition-all duration-200"
-            >
-              Get Started Free
-            </Link>
-            <Link
-              href="/auth/login"
-              className="bg-surface-default text-primary-default font-bold py-3 px-10 rounded-[16px] shadow-lg text-center text-lg hover:bg-surface-subtle hover:text-primary-lighter transition-all duration-200 border border-border-default"
-            >
-              Sign In
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Steps Section */}
       <section className="w-full max-w-6xl mx-auto px-6 py-16">
@@ -105,10 +82,13 @@ export default function Home() {
         <div className="bg-gradient-to-r from-primary-subtle to-primary-lighter rounded-2xl p-8 md:p-12 text-center">
           <div className="text-4xl mb-4">💬</div>
           <blockquote className="text-xl md:text-2xl font-medium text-body mb-4">
-            "LevelUp helped me stay motivated in my career transition. The gamification
-            made learning fun and the community support was incredible!"
+            "LevelUp helped me stay motivated in my career transition. The
+            gamification made learning fun and the community support was
+            incredible!"
           </blockquote>
-          <cite className="text-lg text-caption">- Sarah M., Per Scholas Graduate</cite>
+          <cite className="text-lg text-caption">
+            - Sarah M., Per Scholas Graduate
+          </cite>
         </div>
       </section>
 
@@ -119,8 +99,8 @@ export default function Home() {
             Ready to Level Up Your Career?
           </h2>
           <p className="text-xl mb-8 text-text-negative opacity-90">
-            Join thousands of Per Scholas alumni who are already tracking their progress
-            and earning badges.
+            Join thousands of Per Scholas alumni who are already tracking their
+            progress and earning badges.
           </p>
           <Link
             href="/auth/signup"
@@ -141,4 +121,4 @@ export default function Home() {
       </footer>
     </main>
   );
-} 
+}
