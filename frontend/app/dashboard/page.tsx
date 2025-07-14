@@ -42,17 +42,19 @@ export default function DashboardPage() {
   useEffect(() => {
     if (!user || !user.uid) return;
     setLoadingData(true);
-    Promise.all([fetchUserInfo(), fetchUserTasks()]).then(([info, tasks]) => {
-      console.log('Fetched user info:', info);
-      console.log('Fetched user tasks:', tasks);
-      setUserInfo(info);
-      setTasks(tasks);
-      setLoadingData(false);
-      console.log('Loading data set to false');
-    }).catch((err) => {
-      console.error('Error fetching dashboard data:', err);
-      setLoadingData(false);
-    });
+    Promise.all([fetchUserInfo(), fetchUserTasks()])
+      .then(([info, tasks]) => {
+        console.log("Fetched user info:", info);
+        console.log("Fetched user tasks:", tasks);
+        setUserInfo(info);
+        setTasks(tasks);
+        setLoadingData(false);
+        console.log("Loading data set to false");
+      })
+      .catch((err) => {
+        console.error("Error fetching dashboard data:", err);
+        setLoadingData(false);
+      });
   }, [user]);
 
   useEffect(() => {
@@ -172,8 +174,8 @@ export default function DashboardPage() {
             </div>
           ) : (
             <div className="space-y-4">
-              {tasks.slice(0, 5).map((task) => (
-                <TaskCard key={task.id} task={task} />
+              {tasks.slice(0, 5).map((task, idx) => (
+                <TaskCard key={task.id || idx} task={task} />
               ))}
             </div>
           )}
